@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+    <meta charset="utf-8">
+    <title>My First Angular Form validation Program</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="Vendor/angular.min.js"></script>
+     <script type="text/javascript">
+        angular.module('myApp',[])
+        .controller("UserController",['$scope',function($scope){
+            $scope.user = {};
+        //     $scope.countries =[{
+        //         id:'US',
+        //         desc: 'United States'
+        //     },
+        //     {
+        //         id: 'GB',
+        //         desc: 'United Kingdom'
+
+        //   },
+        //   {
+        //       id: 'AU',
+        //       desc: 'Australia'
+        //   }
+        //   ];
+        }]);
+        </script>
+    </head>
+    <body>
+        <div class="form-container" ng-controller="UserController">
+            <form action="" name="myForm" novalidate>
+                <!--<label for="userName" class="Data">User Name:</label>
+                <input type="text" name="userName" ng-model="user.userName" class="Data">-->
+                <label for="firstName" class="Data">First Name:</label>
+                <input type="text" ng-required="true" name="firstName" ng-model="user.firstName" ng-minlength="5" class="Data">
+                <span ng-class="{errorMessage:myForm.firstName.$dirty && myForm.firstName.$error.required}" 
+                ng-show="myForm.firstName.$dirty && myForm.firstName.$error.required">The First Name is Required</span>
+                <span ng-class="{errorMessage:myForm.firstName.$dirty && myForm.firstName.$error.minlength}"
+                 ng-show="myForm.firstName.$error.minlength && myForm.firstName.$dirty">Your name must have at least five characters</span>
+                <label for="secondName" class="Data">Second Name:</label>
+                <input type="text" name="secondName" ng-model="user.secondName" class="Data">
+                 <label for="userName" class="Data">User Name:</label>
+                <input type="text" name="userName" ng-model="user.userName" class="Data">
+                <label for="contries" class="Data">Please select Country</label>
+                <select name="country" id="favConts" ng-model="user.country" class="Data"> 
+                    <!--ng-options="country.id as country.desc for country in countries"-->
+                    <option value="">Please enter your favorite Country...</option>
+                    <optgroup label="Abroad">
+                    <option value="US">United States Of America</option>
+                     <option value="UK">United Kingdom</option>
+                      <option value="BC">Birminghanm City</option>
+                      </optgroup>
+                      <optgroup label="Nigeria">
+                       <option value="Lag">Lagos City</option>
+                        <option value="Aba">Aba</option>
+                        </optgroup>
+                        <!--<option value="">Please enter your favorite country...</option>-->
+                </select>
+                <!--<div>Selected Country: {{user.country}}</div>-->
+                <span>Your Gender</span>
+                <!--<label for="male" class="Data">Your Gender:</label>-->
+                <input type="radio" name="gender" ng-model="user.gender" value="male"> Male<br>
+                 <input type="radio" name="gender" ng-model="user.gender" value="female"> Female
+                <label for="Bio" class="Data">Biography:</label>
+                <textarea type="text" class="Data" rows="12" ng-model="user.bio"></textarea>
+                <input type="submit" value="Submit" class="Data">
+            </form>
+        </div>
+        <!--<script src="Vendor/angular.min.js"></script>-->
+        
+        <!--<script type="text/javascript">
+        angular.module('myApp',[])
+        .controller("UserController",['$scope',function($scope){
+            $scope.user = {};
+        //     $scope.countries =[{
+        //         id:'US',
+        //         desc: 'United States'
+        //     },
+        //     {
+        //         id: 'GB',
+        //         desc: 'United Kingdom'
+
+        //   },
+        //   {
+        //       id: 'AU',
+        //       desc: 'Australia'
+        //   }
+        //   ];
+        }]);
+        </script>-->
+    </body>
+</html>

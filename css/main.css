@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+
+*{
+    padding:0;
+    margin:0;
+    border:0;
+    box-sizing: border-box;
+}
+
+form,label,input.Data,select,textarea,span{
+display:block;
+width:360px;
+}
+
+[class="Data"],span{
+margin:12px 0;
+}
+
+[value="Submit"]{
+margin-top:40px;
+}
+
+.form-container{
+ padding-top:10px;
+ height:800px;
+ width:35%;
+ background:lightblue;
+ margin:0 auto;
+}
+
+select,input.Data{
+width: 100%;
+height:40px;
+border-radius:5px;
+line-height: 20px;
+}
+
+form{
+margin:0 auto;
+}
+input:focus{
+    border:1px blue solid;
+}
+input[type="radio"]{
+    display:inline-block;
+    /*margin:-33px;*/
+}
+.errorMessage{
+    color:red;
+}
+input.ng-dirty.ng-invalid{
+    border-color:red;
+}
+
+
